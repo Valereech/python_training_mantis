@@ -1,0 +1,9 @@
+{
+  "app_link": {
+    "baseUrl": "http://localhost/mantisbt-1.2.20/"
+  },
+  "app_creds": {
+    "username": "administrator",
+    "password": "root"
+  }
+}
