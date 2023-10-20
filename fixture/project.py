@@ -50,7 +50,7 @@ class ProjectsHelper:
     def delete_project_by_project_name(self, project_name):
         wd = self.app.wd
         self.go_to_manage_projects_page()
-        wd.find_element_by_xpath("//a[contains(text(), "+project_name+")]").click()
+        wd.find_element_by_xpath("//a[contains(text(),'"+project_name+"')]").click()
         wd.find_element_by_xpath("//input[@value='Delete Project']").click()
         wd.find_element_by_xpath("//input[@value='Delete Project']").click()
         self.projects_cache = None

@@ -13,7 +13,7 @@ def random_string(prefix, maxlen):
         return "".join(str(random.choice(view_status)))
     else:
         symbols = string.ascii_letters + string.digits + string.punctuation + " "*10
-        return "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
+        return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 
 n = 1
@@ -30,6 +30,7 @@ def test_delete_project_by_name(app, project):
     projects_list_before = app.project.get_projects_list()
     if len(projects_list_before) == 0:
         app.project.create_new_project(project)
+        projects_list_before = app.project.get_projects_list()
     project = random.choice(projects_list_before)
     project_name = project.project_name
     app.project.delete_project_by_project_name(project_name)
