@@ -1,7 +1,7 @@
 """module providing class Application for create and destroy fixture"""
 from selenium import webdriver
 from fixture.session import SessionHelper
-
+from fixture.project import ProjectsHelper
 
 class Application:
 
@@ -17,6 +17,7 @@ class Application:
         else:
             raise ValueError("Unrecognized browser %s" % browser)
         self.session = SessionHelper(self)
+        self.project = ProjectsHelper(self)
         self.base_url = base_url
 
     def is_valid(self):

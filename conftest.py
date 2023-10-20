@@ -23,8 +23,10 @@ def app(request):
     global fixture
     browser = request.config.getoption("--browser")
     web_config = load_config(request.config.getoption("--target"))['app_link']
+    app_creds = load_config(request.config.getoption("--target"))['app_creds']
     if fixture is None or not fixture.is_valid():
         fixture = Application(browser=browser, base_url=web_config['baseUrl'])
+    fixture.session.enshure_login(username=app_creds['username'], password=app_creds['password'])
     return fixture
 
 
