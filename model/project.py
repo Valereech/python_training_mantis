@@ -2,7 +2,7 @@
 
 class Project:
 
-    def __init__(self, project_name, status, view_status, description):
+    def __init__(self, project_name=None, status=None, view_status=None, description=None):
         self.project_name = project_name
         self.description = description
         self.status = status
