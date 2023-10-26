@@ -2,6 +2,7 @@ import time
 from selenium.webdriver.support.select import Select
 from model.project import Project
 
+
 class ProjectsHelper:
 
     def __init__(self, app):
@@ -35,7 +36,7 @@ class ProjectsHelper:
         wd = self.app.wd
         if not wd.current_url.endswith("/manage_proj_create_page.php"):
             self.go_to_manage_projects_page()
-        wd.find_element_by_xpath("//input[@value='Create New Project']").click()
+            wd.find_element_by_xpath("//input[@value='Create New Project']").click()
         self.fill_form(project)
         wd.find_element_by_xpath("//input[@value='Add Project']").click()
         time.sleep(3)
